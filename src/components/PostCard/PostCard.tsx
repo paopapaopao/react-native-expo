@@ -1,9 +1,9 @@
 import { JSX } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { DummyJSONPost } from '@/src/types';
+import { DummyJsonPost } from '@/src/types';
 
-type Props = { post: DummyJSONPost | null };
+type Props = { post: DummyJsonPost | null };
 
 export const PostCard = ({ post }: Props): JSX.Element => {
   return (

@@ -2,10 +2,10 @@ import { JSX, useEffect, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
 import { PostCard } from '../components';
-import type { DummyJSONPost } from '../types';
+import type { DummyJsonPost } from '../types';
 
 const Index = (): JSX.Element => {
-  const [posts, setPosts] = useState<DummyJSONPost[]>([]);
+  const [posts, setPosts] = useState<DummyJsonPost[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -13,7 +13,7 @@ const Index = (): JSX.Element => {
         'https://dummyjson.com/posts?limit=0&select=id,title,body'
       );
 
-      const data: { posts: DummyJSONPost[] } = await response.json();
+      const data: { posts: DummyJsonPost[] } = await response.json();
 
       setPosts(data.posts);
     })();
