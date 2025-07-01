@@ -1,7 +1,7 @@
 import { JSX } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { DummyJsonPost } from '@/src/types';
+import type { DummyJsonPost } from '@/src/types';
 
 type Props = { post: DummyJsonPost | null };
 

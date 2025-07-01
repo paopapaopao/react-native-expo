@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import { PostCard } from '../components';
 import type { DummyJsonPost } from '../types';
 
-const Index = (): JSX.Element => {
+const Screen = (): JSX.Element => {
   const [posts, setPosts] = useState<DummyJsonPost[]>([]);
 
   useEffect(() => {
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   listSeparator: { height: 16 },
 });
 
-export default Index;
+export default Screen;

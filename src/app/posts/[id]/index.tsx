@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native';
 import { PostCard } from '@/src/components';
 import type { DummyJsonPost } from '@/src/types';
 
-const Index = (): JSX.Element => {
+const Screen = (): JSX.Element => {
   const { id } = useLocalSearchParams();
   const [post, setPost] = useState<DummyJsonPost | null>(null);
 
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
   postDetailsScreen: { flex: 1 },
 });
 
-export default Index;
+export default Screen;
