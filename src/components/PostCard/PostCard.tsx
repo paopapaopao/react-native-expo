@@ -1,16 +1,29 @@
+import { Link } from 'expo-router';
 import { JSX } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { DummyJsonPost } from '@/src/types';
+import type { DummyJsonPost } from '@/src/types';
 
 type Props = { post: DummyJsonPost | null };
 
-export const PostCard = ({ post }: Props): JSX.Element => {
+export const PostCard = ({ post }: Props): JSX.Element | null => {
+  if (!post?.id) return null;
+
   return (
-    <View style={styles.postCard}>
-      <Text style={styles.title}>{post?.title}</Text>
-      <Text style={styles.body}>{post?.body}</Text>
-    </View>
+    <Link
+      href={{
+        pathname: '/posts/[id]',
+        params: { id: post?.id },
+      }}
+      asChild
+    >
+      <TouchableOpacity>
+        <View style={styles.postCard}>
+          <Text style={styles.title}>{post?.title}</Text>
+          <Text style={styles.body}>{post?.body}</Text>
+        </View>
+      </TouchableOpacity>
+    </Link>
   );
 };
 

@@ -8,6 +8,12 @@ const Layout = (): JSX.Element => {
         name='index'
         options={{ title: 'Home' }}
       />
+      <Stack.Screen
+        name='posts/[id]/index'
+        options={({ route }) => ({
+          title: `Post ${(route.params as { id: string }).id}`,
+        })}
+      />
     </Stack>
   );
 };
