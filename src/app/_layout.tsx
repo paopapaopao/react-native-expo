@@ -9,6 +9,10 @@ const Layout = (): JSX.Element => {
         options={{ title: 'Home' }}
       />
       <Stack.Screen
+        name='+not-found'
+        options={{ title: 'Not Found' }}
+      />
+      <Stack.Screen
         name='posts/[id]/index'
         options={({ route }) => ({
           title: `Post ${(route.params as { id: string }).id}`,
